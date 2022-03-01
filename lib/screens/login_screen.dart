@@ -1,3 +1,4 @@
+import 'package:flash_chat/constants.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -19,9 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
+            Hero(
+              tag: "logo",
+              child: Container(
+                height: 200.0,
+                child: Image.asset('images/logo.png'),
+              ),
             ),
             const SizedBox(
               height: 48.0,
@@ -32,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               decoration: const InputDecoration(
                 hintText: 'Enter your email',
+                hintStyle: kHintTextStyle,
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -62,6 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               decoration: const InputDecoration(
                 hintText: 'Enter your password',
+                hintStyle: kHintTextStyle,
                 contentPadding: EdgeInsets.symmetric(
                   vertical: 10.0,
                   horizontal: 20.0,

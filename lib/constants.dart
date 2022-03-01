@@ -20,3 +20,9 @@ const kMessageContainerDecoration = BoxDecoration(
     ),
   ),
 );
+
+const kHintTextStyle = TextStyle(
+  color: Colors.grey,
+  fontSize: 14.0,
+  fontStyle: FontStyle.italic,
+);
