@@ -11,6 +11,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  late final String email;
+  late final String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +35,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 48.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
               onChanged: (value) {
-                //Do something with the user input.
+                email = value;
               },
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your email',
@@ -43,8 +47,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               height: 8.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
               onChanged: (value) {
-                //Do something with the user input.
+                password = value;
               },
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your password',
@@ -57,7 +62,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               buttonTitle: 'Register',
               buttonColor: Colors.blueAccent,
               onPressed: () {
-                //Implement registration functionality.
+                print(email);
+                print(password);
               },
             ),
           ],
