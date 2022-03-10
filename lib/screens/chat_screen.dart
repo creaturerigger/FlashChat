@@ -31,17 +31,24 @@ class _ChatScreenState extends State<ChatScreen> {
   void getMessages() {
     CollectionReference messagesRef = _firestore.collection('messages');
     messagesRef.get().then((QuerySnapshot snapshot) {
-      snapshot.docs.forEach((doc) {
-        print('${doc['text']}');
-      });
+      for (var doc in snapshot.docs) {
+        print(doc.data());
+      }
     });
+  }
+
+  void messagesStream() async {
+    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+      for (var message in snapshot.docs) {
+        print(message.data());
+      }
+    }
   }
 
   @override
   void initState() {
     super.initState();
     getCurrentUser();
-    getMessages();
   }
 
   @override
@@ -53,8 +60,9 @@ class _ChatScreenState extends State<ChatScreen> {
           IconButton(
             icon: const Icon(Icons.close),
             onPressed: () {
-              _auth.signOut();
-              Navigator.pop(context);
+              //_auth.signOut();
+              //Navigator.pop(context);
+              messagesStream();
             },
           ),
         ],
