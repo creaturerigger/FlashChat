@@ -48,3 +48,8 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const kMessageTextStyle = TextStyle(
+  fontSize: 18.0,
+  color: Colors.white,
+);

@@ -22,7 +22,7 @@ class FlashChat extends StatelessWidget {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LoginScreen.id: (context) => const LoginScreen(),
         RegistrationScreen.id: (context) => const RegistrationScreen(),
-        ChatScreen.id: (context) => const ChatScreen(),
+        ChatScreen.id: (context) => ChatScreen(),
       },
     );
   }
