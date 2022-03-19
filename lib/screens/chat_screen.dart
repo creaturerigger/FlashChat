@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flash_chat/components/message_stream_builder.dart';
 
 class ChatScreen extends StatefulWidget {
-  ChatScreen({Key? key}) : super(key: key);
+  const ChatScreen({Key? key}) : super(key: key);
   static const String id = 'chat_screen';
 
   @override
@@ -78,6 +78,7 @@ class _ChatScreenState extends State<ChatScreen> {
           children: <Widget>[
             MessageStreamBuilder(
               firestoreInstance: _firestore,
+              loggedInUser: loggedInUser,
             ),
             Container(
               decoration: kMessageContainerDecoration,
